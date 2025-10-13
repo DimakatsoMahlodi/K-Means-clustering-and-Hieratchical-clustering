@@ -4,7 +4,7 @@
 
 ### Abstract
 
-This report presents the data cleaning process conducted on two datasets: Credit Card Transactions and Wine Quality. The aim was to improve the reliability, consistency, and overall quality of the data to make it suitable for analysis and machine learning. Both datasets exhibited issues such as missing values, duplicate entries, outliers, and inconsistent formatting. Systematic cleaning procedures were applied, resulting in datasets that are now ready for exploratory data analysis and modeling.
+This report presents the data cleaning process conducted on two datasets: Credit Card Transactions and Wine Quality. The aim was to improve the reliability, consistency, and overall quality of the data to make it suitable for analysis and machine learning. Both datasets exhibited issues such as missing values, duplicate entries, outliers, and inconsistent formatting. Systematic cleaning procedures were applied, resulting in datasets that are now ready for exploratory data analysis and modeling. The k means and hierarchical clustering they are unsupervised learning algorothms maening there are no labels to compare predictions to.
 
 ---
 
@@ -86,6 +86,7 @@ The data cleaning process followed a systematic, scientific approach:
 - **Hypothesis:** Applying cleaning and standardization techniques would improve dataset reliability and prepare the data for modeling.  
 - **Experimentation:** Missing values were imputed, duplicates removed, outliers capped, and numerical features normalized.  
 - **Analysis:** After cleaning, all missing and duplicate records were resolved, and skewness was reduced, resulting in more balanced datasets.
+- The k-means-clustering perform better than Hierarchical-clustering , kmeans has higher silhoutte and lower DBI so it performs better.
 
 **Trade-offs:**  
 Median imputation may slightly reduce natural variability, and outlier capping can remove rare but legitimate extreme cases. However, these steps improved overall model performance and analytical reliability.
