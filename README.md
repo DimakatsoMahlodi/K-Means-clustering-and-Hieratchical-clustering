@@ -95,12 +95,6 @@ Visualizations for both algorithms were generated using Matplotlib. The x- and y
 
 ---
 
-### Suggested Visualizations
-
-- Credit Card: Boxplots of Amount before and after outlier treatment.  
-- Wine Quality: Histograms of residual sugar before and after log transformation.  
-- Both: Missing value heatmaps using missingno.
-
 ---
 
 ## Discussion
