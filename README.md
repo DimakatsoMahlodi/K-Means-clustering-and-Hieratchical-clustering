@@ -95,7 +95,6 @@ Visualizations for both algorithms were generated using Matplotlib. The x- and y
 
 ---
 
----
 
 ## Discussion
 
