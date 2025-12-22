@@ -17,11 +17,13 @@ The repository is organized as follows:
   - creditcard.ipynb
   - hierarchical-clustering.ipynb
   - README.md
+  - The EDA file
 - WineQuality/
   - winequality.csv
   - winequality.ipynb
   - k-means-clustering.ipynb
   - README.md
+  - The EDA
 
 ---
 
