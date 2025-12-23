@@ -9,19 +9,19 @@ After cleaning, K-Means Clustering and Hierarchical Clustering were applied to b
 
 The project files are organised as follows:
 
-CreditCard/
-- creditcard.csv
+### CreditCard/
 - creditcard.ipynb
+- exploratory_data_anailysis.ipynb
 - hierarchical-clustering.ipynb
 - README.md
-- exploratory_data_analysis.ipynb
+- creditcard.csv
 
-WineQuality/
-- winequality.csv
+### WineQuality/
 - winequality.ipynb
+- exploritary_data_anailysis.ipynb
 - k-means-clustering.ipynb
 - README.md
-- exploratory_data_analysis.ipynb
+- winequality.csv
 
 ## 2. Datasets
 Credit Card Dataset
