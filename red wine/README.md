@@ -1,77 +1,109 @@
-# Clustering Analysis on Wine Quality Dataset
-
+# Clustering Analysis on Wine Quality Dataset and EDA
 ## Overview
 
-This project applies unsupervised learning techniques—Hierarchical Clustering and K-Means Clustering—to the Wine Quality dataset. The aim is to identify natural groupings of wines based on their chemical properties, providing insights into patterns and similarities that could inform quality assessment and further predictive analysis.
+This project applies unsupervised learning techniques—Hierarchical Clustering and K-Means Clustering—to the Wine Quality dataset. The goal is to identify natural groupings of wines based on their chemical properties and to gain insights into patterns and similarities that may support quality assessment and future predictive analysis.
 
----
+### Dataset
 
-## Datasets
+### winequality.csv
+Contains chemical measurements of red and white wines along with quality scores.
 
-- **winequality.csv** – Includes chemical measurements of wines (red and white) along with quality scores.
+#### Project Files
 
----
+This repository includes the following Jupyter Notebook files:
 
-## Hierarchical Clustering
+### DATA_CLEANING_.ipynb
+Handles data preprocessing tasks such as checking for missing values, removing duplicates, handling outliers, and preparing the dataset for analysis.
 
-Hierarchical clustering was performed on the first two numerical features of the dataset to identify natural groupings.
+### EDA.ipynb
+Performs Exploratory Data Analysis (EDA), including summary statistics and visualizations to better understand the distribution and relationships of wine chemical features.
 
+### Clustering_.ipynb
+Contains the implementation of Hierarchical Clustering and K-Means Clustering, including model training, visualization, and interpretation of results.
+
+### Hierarchical Clustering
+## Methodology
+
+### Dendrogram Analysis
+
+A dendrogram was generated using Ward linkage with Euclidean distance.
+
+The last 30 merges were displayed for clarity.
+
+Significant gaps in the dendrogram suggested five clusters.
+
+Model Training
+
+Agglomerative hierarchical clustering was applied.
+
+Parameters used:
+
+n_clusters = 5
+
+metric = 'euclidean'
+
+linkage = 'ward'
+
+Cluster Visualization
+
+A 2D scatter plot was used to visualize clusters with different colors.
+
+The results showed well-separated groups based on the selected features.
+
+### K-Means Clustering
 ### Methodology
 
-1. **Dendrogram Analysis**  
-   - A dendrogram using Ward linkage with Euclidean distance was generated.  
-   - The last 30 merges were displayed for clarity.  
-   - Based on significant gaps in the dendrogram, five clusters were selected.
+Optimal Cluster Selection (Elbow Method)
 
-2. **Model Training**  
-   - Agglomerative hierarchical clustering assigned wines to five clusters.  
-   - Parameters used: `n_clusters = 5`, `metric = 'euclidean'`, `linkage = 'ward'`.
+The elbow method was applied to determine the optimal number of clusters.
 
-3. **Cluster Visualization**  
-   - A 2D scatter plot visualized the clusters with distinct colors.  
-   - Hierarchical clustering revealed well-separated groups based on the selected features.
+The elbow point indicated five clusters.
 
----
+Model Training
 
-## K-Means Clustering
+K-Means clustering was applied with:
 
-K-Means clustering was applied to a different pair of numerical features from the Wine Quality dataset to identify and visualize cluster centers.
+n_clusters = 5
 
-### Methodology
+init = 'k-means++'
 
-1. **Optimal Cluster Selection (Elbow Method)**  
-   - The elbow method was used to determine the optimal number of clusters, which was identified as five.
+Cluster labels and centroids were computed.
 
-2. **Model Training**  
-   - K-Means clustering was applied with `n_clusters = 5`, using the `k-means++` initialization method.  
-   - Cluster assignments and centroids were computed for visualization.
+Cluster Visualization
 
-3. **Cluster Visualization**  
-   - Each cluster was plotted with a distinct color, and centroids were highlighted in yellow.  
-   - This plot provided a clear representation of cluster structure and central tendencies.
+Clusters were visualized using a scatter plot with distinct colors.
 
----
+Cluster centroids were highlighted in yellow, making central tendencies easy to interpret.
 
-## Results
+Results
 
-- Both clustering methods produced **five distinct clusters**, demonstrating natural groupings within the Wine Quality dataset.  
-- **Hierarchical Clustering** revealed nested relationships and proximity between clusters.  
-- **K-Means Clustering** provided clear centroids, making it easier to interpret average feature values for each cluster.  
-- Scatter plots confirmed coherent cluster separation for the selected features.
+Both clustering techniques identified five distinct clusters, indicating natural groupings within the dataset.
 
----
+Hierarchical Clustering revealed nested relationships and how clusters merge at different levels.
+
+K-Means Clustering provided clear centroids, simplifying interpretation of average feature values per cluster.
+
+Scatter plots confirmed good separation between clusters for the selected features.
 
 ## Discussion
 
-- Hierarchical clustering is effective for understanding hierarchical relationships between observations, showing how clusters merge at different levels.  
-- K-Means is suitable for identifying cluster centroids and provides easily interpretable clusters for numerical analysis.  
-- Using both methods offers complementary insights: hierarchical clustering for structure and K-Means for centroid-based summaries.  
-- Limitations: Clustering was performed on only two features for visualization purposes, which may not capture complex relationships present in all chemical properties.
+Hierarchical clustering is effective for understanding hierarchical relationships among observations.
 
----
+K-Means is well-suited for identifying centroid-based clusters and summarizing numerical data.
+
+Using both methods provides complementary insights:
+
+Hierarchical clustering for structural understanding.
+
+K-Means for centroid-based interpretation.
+
+Limitation: Clustering was performed on only two features for visualization, which may not capture all complex relationships among chemical properties.
 
 ## Conclusion
 
-The clustering analysis successfully identified five distinct clusters in the Wine Quality dataset using both Hierarchical and K-Means approaches.  
-These methods revealed meaningful groupings based on chemical composition, offering a foundation for further analysis, such as predicting wine quality or exploring relationships between chemical features.  
-Overall, this study demonstrates how unsupervised learning techniques can uncover patterns and structure within complex datasets.
+This project successfully identified five meaningful clusters in the Wine Quality dataset using both Hierarchical and K-Means clustering methods. The analysis highlights how unsupervised learning techniques can uncover hidden structure and patterns in complex datasets. These findings provide a strong foundation for future work, such as predicting wine quality or exploring deeper relationships between chemical features.
+
+
+
+
+
