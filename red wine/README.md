@@ -1,7 +1,8 @@
 # Clustering Analysis on Wine Quality Dataset and EDA
 ## Overview
 
-This project applies unsupervised learning techniques—Hierarchical Clustering and K-Means Clustering—to the Wine Quality dataset. The goal is to identify natural groupings of wines based on their chemical properties and to gain insights into patterns and similarities that may support quality assessment and future predictive analysis.
+This project applies unsupervised learning techniques—Hierarchical Clustering and K-Means Clustering—to the Wine Quality dataset. The goal is to identify natural groupings of wines based on their chemical properties and to gain insights into patterns and similarities that may support quality assessment and future predictive analysis. 
+
 
 ### Dataset
 
@@ -102,6 +103,7 @@ Limitation: Clustering was performed on only two features for visualization, whi
 ## Conclusion
 
 This project successfully identified five meaningful clusters in the Wine Quality dataset using both Hierarchical and K-Means clustering methods. The analysis highlights how unsupervised learning techniques can uncover hidden structure and patterns in complex datasets. These findings provide a strong foundation for future work, such as predicting wine quality or exploring deeper relationships between chemical features.
+
 
 
 
