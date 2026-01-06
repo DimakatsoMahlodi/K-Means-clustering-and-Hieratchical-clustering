@@ -1,90 +1,137 @@
-# Clustering Analysis on Credit Card Dataset
+# Clustering Analysis of Credit Card Dataset
 
-## Overview
+## 1. Overview
 
-This project applies unsupervised learning techniques—**Hierarchical Clustering** and **K-Means Clustering**—to the Credit Card dataset. The aim is to identify natural groupings of clients based on financial and demographic features, providing insights into customer segmentation for marketing strategies, risk assessment, and behavioral analysis.
+This study applies unsupervised learning techniques—Hierarchical Clustering and K-Means Clustering—to the Credit Card dataset to identify natural groupings of clients. The primary objective is to uncover patterns in customer financial and demographic behavior, which can inform marketing strategies, risk assessment, and customer behavior analysis.
 
----
+By comparing both clustering methods, we aim to gain complementary insights into the structure and characteristics of the client segments.
 
-## Dataset
+## 2. Dataset Description
 
-- **default of credit card clients.xls** – Contains anonymized credit card client data, including credit limits, demographic attributes (such as sex and age), and default payment information.
+Dataset Name: default of credit card clients.xls
 
----
+Contents: Anonymized credit card client data including:
 
-## Hierarchical Clustering
+Credit limits (LIMIT_BAL)
 
-Hierarchical clustering was applied to explore the relationships and segment clients based on key features.
+Demographic attributes (SEX, AGE)
 
-### Methodology
+Default payment status and other financial indicators
 
-1. **Feature Selection**  
-   - Two features were used: `LIMIT_BAL` (credit limit) and `SEX`.  
-   - The first row (original headers) was excluded to avoid incorrect data interpretation.
+Preprocessing: The first row (original headers) was removed to ensure correct data interpretation. Missing values and anomalies were addressed to ensure data consistency.
 
-2. **Dendrogram Analysis**  
-   - A dendrogram was generated using the Ward linkage method with Euclidean distance.  
-   - Only the last 30 merges were displayed for clarity.  
-   - Five clusters were chosen based on significant vertical gaps, indicating optimal cluster separation.
+## 3. Hierarchical Clustering
 
-3. **Model Training**  
-   - Agglomerative hierarchical clustering assigned clients to five clusters with the following parameters:  
-     - `n_clusters = 5`  
-     - `metric = 'euclidean'`  
-     - `linkage = 'ward'`  
+Hierarchical clustering was employed to explore nested relationships among clients and segment them based on key attributes.
 
-4. **Cluster Visualization**  
-   - A scatter plot showed each cluster in a distinct color.  
-   - Hierarchical clustering revealed nested relationships, demonstrating how clusters merge at different levels.
+### 3.1 Methodology
 
----
+#### Feature Selection:
 
-## K-Means Clustering
+LIMIT_BAL (credit limit)
 
-K-Means clustering was applied to segment clients based on a different set of numerical features for centroid-based analysis.
+SEX (gender)
 
-### Methodology
+#### Distance Metric and Linkage:
 
-1. **Feature Selection**  
-   - Two numerical features were selected for clustering (e.g., credit limit and age).  
+Euclidean distance was used to measure similarity.
 
-2. **Optimal Cluster Selection (Elbow Method)**  
-   - The elbow method was used to plot WCSS (Within-Cluster Sum of Squares) for 1–10 clusters.  
-   - The elbow point suggested **five clusters** as optimal.
+Ward’s linkage was applied to minimize variance within clusters.
 
-3. **Model Training**  
-   - K-Means clustering was applied with:  
-     - `n_clusters = 5`  
-     - `init = 'k-means++'`  
-     - `random_state = 42`  
-   - Clients were assigned to clusters, and centroids were calculated.
+#### Dendrogram Construction:
 
-4. **Cluster Visualization**  
-   - Each cluster was displayed in a distinct color, with centroids highlighted in yellow.  
-   - Scatter plots showed clear separation and average positions of each cluster.
+A dendrogram was generated to visualize the merging process.
 
----
+Only the last 30 merges were displayed for clarity.
 
-## Results
+Vertical gaps in the dendrogram were analyzed to determine the optimal number of clusters. Five clusters were selected based on significant separation in the dendrogram.
 
-- Both methods produced **five distinct clusters**, indicating meaningful segmentation of clients.  
-- **Hierarchical Clustering** highlighted nested relationships and cluster proximities.  
-- **K-Means Clustering** provided centroids for interpreting average feature values in each group.  
-- Scatter plots confirmed coherent cluster separation across both methods.
+#### Model Training:
 
----
+Agglomerative clustering was performed with the following parameters:
 
-## Discussion
+n_clusters = 5
 
-- **Hierarchical Clustering** is effective for understanding cluster structure and merging relationships.  
-- **K-Means Clustering** offers easily interpretable centroids, suitable for numerical summaries.  
-- Using both techniques provides complementary insights: hierarchical clustering for structure, K-Means for centroid-based interpretations.  
-- Limitation: Clustering was performed on only two features for visualization; additional features could reveal more complex patterns.
+metric = 'euclidean'
 
----
+linkage = 'ward'
 
-## Conclusion
+#### Visualization:
 
-The clustering analysis successfully segmented the Credit Card dataset into five coherent groups using both Hierarchical and K-Means approaches.  
-This segmentation provides insights into customer profiles based on financial and demographic attributes, supporting strategic decision-making in marketing, risk management, and customer behavior analysis.  
-Overall, the study demonstrates how unsupervised learning techniques can uncover meaningful patterns in complex datasets and guide data-driven decisions.
+Scatter plots were generated to visualize cluster assignments, with each cluster represented by a distinct color.
+
+Hierarchical clustering highlighted the hierarchical relationships and proximities between client groups.
+
+## 4. K-Means Clustering
+
+K-Means clustering was applied to segment clients based on numerical features and to calculate cluster centroids for interpretable summaries.
+
+### 4.1 Methodology
+
+#### Feature Selection:
+
+Two numerical features (e.g., LIMIT_BAL and AGE) were selected for clustering.
+
+Optimal Cluster Determination:
+
+The Elbow Method was used to determine the optimal number of clusters.
+
+Within-Cluster Sum of Squares (WCSS) was plotted for k = 1–10.
+
+The plot indicated an elbow point at k = 5, suggesting five clusters as optimal.
+
+#### Model Training:
+
+K-Means clustering was implemented with the following parameters:
+
+n_clusters = 5
+
+init = 'k-means++' (to optimize initial centroid selection)
+
+random_state = 42
+
+Each client was assigned to a cluster, and cluster centroids were calculated to represent the average feature values.
+
+#### Visualization:
+
+Scatter plots displayed clusters in distinct colors, with centroids highlighted.
+
+Cluster separation and centroid positions were visually evaluated to confirm coherence.
+
+## 5. Results
+
+Both Hierarchical Clustering and K-Means Clustering identified five distinct clusters, confirming meaningful segmentation.
+
+Hierarchical Clustering: Revealed nested relationships and the relative proximity of clusters.
+
+K-Means Clustering: Provided centroid-based summaries, allowing interpretation of average feature values within each cluster.
+
+Scatter plots confirmed clear and consistent cluster separation for both methods.
+
+## 6. Discussion
+
+#### Method Comparison:
+
+Hierarchical clustering is effective for visualizing cluster structure and understanding nested relationships.
+
+K-Means clustering is ideal for centroid-based analysis and summarizing cluster characteristics numerically.
+
+Complementarity: Using both methods provides a more comprehensive understanding of customer segmentation—structural insight from hierarchical clustering and numerical summary from K-Means.
+
+#### Limitations:
+
+Only two features were used for visualization and clustering; including additional features (e.g., payment history, bill amounts) could reveal more complex patterns.
+
+Scaling and normalization were assumed for numerical features, but differences in scale could influence clustering results.
+
+## 7. Conclusion
+
+The clustering analysis successfully segmented the Credit Card dataset into five coherent groups using Hierarchical and K-Means clustering methods.
+
+Segmentation enables the identification of distinct customer profiles based on financial and demographic attributes.
+
+These insights can support marketing strategies, risk assessment, and behavioral analysis.
+
+Overall, the study demonstrates the effectiveness of unsupervised learning techniques in uncovering meaningful patterns in complex datasets, providing a foundation for data-driven decision-making.
+
+
